@@ -1,0 +1,21 @@
+<h1>現在輪到玩家:{{player}}</h1>
+<!-- 輪到圈圈局或叉叉局 -->
+
+<button nbButton outline status="danger" (click)="newGame()">
+  開新局
+</button>
+
+
+<!-- ngIf 可以是判斷，也可以是成為某狀態的變數 -->
+<!-- winner也是回傳oo或xx -->
+<h2 *ngIf="winner">
+  玩家{{winner}}贏了!!
+</h2>
+
+<main>
+
+  <app-square *ngFor="let val of  squares; let i = index" [value]="val" (click)="makeMove(i)">
+  </app-square>
+
+
+</main>
